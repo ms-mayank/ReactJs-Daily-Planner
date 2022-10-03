@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import Clock from "./Clock";
 
 export default function AddTodo({ addTodos }) {
   let jumboclr = {
@@ -20,42 +19,41 @@ export default function AddTodo({ addTodos }) {
   };
   return (
     <>
-      <div className="container ">
-        <div className="row">
-          <div className="col-sm-6 mt-4 py-2 shadow p-3 mb-2 bg-white rounded-left " style={jumboclr}>
-            <form onSubmit={submit}>
-              <div className="form-group">
-                <label htmlFor="title">Title</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  value={title}
-                  onChange={(e) => {
-                    setTitle(e.target.value);
-                  }}
-                  id="title"
-                  aria-describedby="emailHelp"
-                  placeholder="Enter Tilte"
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="desc">Description</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  value={desc}
-                  onChange={(e) => {
-                    setDesc(e.target.value);
-                  }}
-                  id="desc"
-                  placeholder="Description"
-                />
-              </div>
-              <button className="btn btn-sm btn-success">Submit</button>
-            </form>
+      <div className="col m-2 shadow  bg-white rounded" style={jumboclr}>
+        <form onSubmit={submit}>
+          <div className="form-group">
+            <h6 className="mt-2 m-0">
+              <label htmlFor="title">Title</label>
+            </h6>
+            <input
+              type="text"
+              className="form-control"
+              value={title}
+              onChange={(e) => {
+                setTitle(e.target.value);
+              }}
+              id="title"
+              aria-describedby="emailHelp"
+              placeholder="Enter Tilte"
+            />
           </div>
-          <div className="col-sm-6 mt-4 py-2 shadow p-3 mb-2 bg-white   rounded-right ">{/* <Clock /> */}</div>
-        </div>
+          <div className="form-group">
+            <h6 className="mt-2 m-0">
+              <label htmlFor="desc">Description</label>
+            </h6>
+            <input
+              type="text"
+              className="form-control"
+              value={desc}
+              onChange={(e) => {
+                setDesc(e.target.value);
+              }}
+              id="desc"
+              placeholder="Description"
+            />
+          </div>
+          <button className="btn btn-sm btn-success">Submit</button>
+        </form>
       </div>
     </>
   );

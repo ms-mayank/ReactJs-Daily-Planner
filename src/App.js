@@ -4,7 +4,7 @@ import Todos from "./MyComponents/Todos";
 import Footer from "./MyComponents/Footer";
 import AddTodo from "./MyComponents/AddTodo";
 import About from "./MyComponents/About";
-
+import Clock from "./MyComponents/Clock";
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Routes, Route, Link } from "react-router-dom";
 function App() {
@@ -42,13 +42,18 @@ function App() {
   return (
     <div style={mainBody}>
       <Router>
-        <Header Title="EveryDay" Search={true} />
+        <Header Title="EveryDay" Search={false} />
         <Routes>
           <Route
             path="/"
             element={
               <>
-                <AddTodo addTodos={addTodos} />
+                <div className="container">
+                  <div className="row">
+                    <AddTodo addTodos={addTodos} />
+                    <Clock />
+                  </div>
+                </div>
                 <hr />
                 <Todos todoitems={todoitems} onDelete={onDelete} />
               </>

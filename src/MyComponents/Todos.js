@@ -9,7 +9,7 @@ export default function Todos(props) {
           ? props.todoitems.map((item) => {
               return <Todoitem key={item.tDate} item={item} onDelete={props.onDelete} />;
             })
-          : "Nothing To show"}
+          : "ADD CREATE AND EXPLORE :-)"}
       </div>
     </div>
   );
